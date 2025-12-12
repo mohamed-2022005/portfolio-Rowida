@@ -79,7 +79,7 @@ export default function Projects() {
         >
           <img
             className="w-60 h-80 object-cover cursor-pointer rounded-2xl mb-4 transition-transform duration-500 ease-in-out hover:scale-105"
-            src={img8}
+            src={img2}
             alt="project 3"
           />
           <h1 className="font-bold text-lg mb-2">
