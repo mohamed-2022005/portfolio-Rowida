@@ -61,7 +61,7 @@ export default function Contact() {
             <div>
               <h3 className="font-bold text-lg">Phone</h3>
               <a href="tel:+201011371312" className="text-gray-700">
-                +201011371312
+                01011371312
               </a>
             </div>
           </div>
