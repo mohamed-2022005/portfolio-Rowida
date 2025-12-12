@@ -70,7 +70,7 @@ export default function Contact() {
             <FiMapPin size={30} className="text-[#669089]" />
             <div>
               <h3 className="font-bold text-lg">Office Location</h3>
-              <p className="text-gray-700">Zagazig, Egypt</p>
+              <p className="text-gray-700">Zagazig, Cairo</p>
             </div>
           </div>
         </div>
