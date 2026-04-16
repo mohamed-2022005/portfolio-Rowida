@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar />  
       <HeroSection />
       <Services />
          <Projects />

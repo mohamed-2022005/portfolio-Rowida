@@ -17,7 +17,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full px-4 py-3 bg-[#f8f9fa]">
       
       {/* Navbar الأساسي */}
-      <nav className="mx-auto max-w-5xl bg-white/80 backdrop-blur-md border border-gray-100 shadow-sm rounded-2xl px-6 py-3 transition-all duration-300">
+      <nav className="mx-auto max-w-7xl bg-white/80 backdrop-blur-md border border-gray-100 shadow-sm rounded-2xl px-6 py-4 transition-all duration-300">
         <div className="flex justify-between items-center">
           
           <div className="flex items-center gap-2">
