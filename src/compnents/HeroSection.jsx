@@ -25,15 +25,15 @@ export default function HeroSection() {
                         {[
                             {
                                 icon: FaSquareFacebook,
-                                link: "https://www.facebook.com/share/1B7KzWtAJw/"
+                                link: "https://www.facebook.com/rowida.reda.915168?rdid=6K4NE7MtYVcHNLk8&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18dhAqPvB3%2F#"
                             },
                             {
                                 icon: FaTiktok,
-                                link: "https://www.tiktok.com/@speechtherapybyrowida?_r=1&_t=ZS-9272cT0zPFA"
+                                link: "https://www.tiktok.com/@rowida.reda96?_r=1&_t=ZS-95aYuf0u9aC"
                             },
                             {
                                 icon: FaInstagram,
-                                link: "https://www.instagram.com/speech_therapy_byrowida?igsh=MTZjdnZjdGl1ZGVheQ=="
+                                link: "https://www.instagram.com/rowidareda5"
                             },
                         ].map((item, i) => {
 
