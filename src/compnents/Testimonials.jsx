@@ -35,7 +35,7 @@ const rows = [
   [
     { image: img7, name: "Mamet Malek" },
     { image: img1, name: "Om Mohamed" },
-    { image: img3, name: "Mohamed Abdallah" },
+    { image: img3, name: "Toka" },
     { image: img2, name: "Om Mostafa" },
   ],
   [
