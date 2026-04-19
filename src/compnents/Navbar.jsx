@@ -28,7 +28,6 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl bg-white/80 backdrop-blur-md border border-gray-100 shadow-sm rounded-2xl px-6 py-4 transition-all duration-300">
         <div className="flex justify-between items-center">
           
-          {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-[#669089] rounded-lg flex items-center justify-center text-white font-bold">R</div>
             <h1 className="font-rowida font-bold text-xl text-gray-800 tracking-tight">
@@ -36,7 +35,6 @@ export default function Navbar() {
             </h1>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-4">
             <div className="hidden lg:flex items-center gap-1 bg-gray-50/50 p-1 rounded-xl border border-gray-100">
               {navLinks.map((link) => (
@@ -56,20 +54,9 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Buttons (زر اللغة + المنيو) */}
-          <div className="flex items-center gap-3 lg:hidden">
-            {/* زر اللغة في الموبايل - جنب المنيو */}
-            <button
-              onClick={toggleLanguage}
-              className="px-3 py-1.5 bg-[#669089]/10 text-[#669089] rounded-lg text-xs font-bold border border-[#669089]/20"
-            >
-              {i18n.language === "en" ? "AR" : "EN"}
-            </button>
-            
-            <button onClick={() => setShowMenu(true)} className="p-2 text-[#669089]">
-              <FiMenu size={26} />
-            </button>
-          </div>
+          <button onClick={() => setShowMenu(true)} className="lg:hidden p-2 text-[#669089]">
+            <FiMenu size={26} />
+          </button>
         </div>
       </nav>
 
@@ -107,7 +94,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* زرار اللغة في الموبايل (جوة المنيو لسه موجود للتأكيد) */}
+        {/* زرار اللغة في الموبايل (جوة المنيو فقط) */}
         <div className="mt-8">
           <button
             onClick={() => {
@@ -121,7 +108,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Footer */}
+        {/* Footer التحتاني */}
         <div className="mt-auto pt-6 text-center">
            <p className="text-[10px] font-black text-[#669089]/60 uppercase tracking-[0.2em]">
              © 2026 ROWIDA REDA
