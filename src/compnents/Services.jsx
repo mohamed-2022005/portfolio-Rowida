@@ -7,11 +7,13 @@ import {
   FiActivity,
   FiBookOpen,
   FiHeart,
-  FiSmile,
 } from "react-icons/fi";
 import { HiOutlineMicrophone } from "react-icons/hi";
+import { useTranslation } from "react-i18next";
 
 export default function Services() {
+  const { t } = useTranslation();
+
   const box =
     "bg-white rounded-xl p-6 w-full max-w-[320px] mx-auto text-center " +
     "shadow-xl transition duration-300 ease-in-out cursor-pointer " +
@@ -20,20 +22,20 @@ export default function Services() {
   const iconClass = "mx-auto mb-3 text-blue-600 text-4xl icon-hover";
 
   const services = [
-    { icon: <FiUsers className={iconClass} />, title: "Pediatric Speech Therapy" },
-    { icon: <HiOutlineMicrophone className={iconClass} />, title: "Accent Modification" },
-    { icon: <FiMessageCircle className={iconClass} />, title: "Language Disorders" },
-    { icon: <FiVolume2 className={iconClass} />, title: "Stuttering Therapy" },
-    { icon: <FiShield className={iconClass} />, title: "Speech Safety & Privacy" },
-    { icon: <FiActivity className={iconClass} />, title: "Cognitive Speech Training" },
-    { icon: <FiBookOpen className={iconClass} />, title: "Educational Workshops" },
-    { icon: <FiHeart className={iconClass} />, title: "Personalized Care Plans" },
+    { icon: <FiUsers className={iconClass} />, title: t("s1") },
+    { icon: <HiOutlineMicrophone className={iconClass} />, title: t("s2") },
+    { icon: <FiMessageCircle className={iconClass} />, title: t("s3") },
+    { icon: <FiVolume2 className={iconClass} />, title: t("s4") },
+    { icon: <FiShield className={iconClass} />, title: t("s5") },
+    { icon: <FiActivity className={iconClass} />, title: t("s6") },
+    { icon: <FiBookOpen className={iconClass} />, title: t("s7") },
+    { icon: <FiHeart className={iconClass} />, title: t("s8") },
   ];
 
   return (
     <div id="Services" className="py-16 bg-[#f9f7f1] font-[Segoe UI]">
       <div data-aos="fade-up" className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-800">My Services & Specialties</h2>
+        <h2 className="text-4xl font-bold text-gray-800">{t("services_title")}</h2>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-4 md:px-12">

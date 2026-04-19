@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next"; // 1. استيراد الهوك
 
 import img1 from "../assets/review1.jpg"; // 1
 import img2 from "../assets/review2.jpg"; // 2
@@ -49,6 +50,8 @@ const rows = [
 ];
 
 export default function Testimonials() {
+  const { t } = useTranslation(); // 2. تعريف الدالة t
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -65,7 +68,8 @@ export default function Testimonials() {
             data-aos="zoom-in"
             className="w-full text-center text-4xl font-bold mb-12 relative"
           >
-            Testimonials
+            {/* 3. استبدال النص بالـ Key الموجود في i18n.js */}
+            {t("testimonials_title")}
           </h1>
 
           {rows.map((row, rowIndex) => (

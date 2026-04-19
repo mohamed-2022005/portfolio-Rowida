@@ -1,16 +1,24 @@
 import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiGlobe } from "react-icons/fi";
+import { useTranslation } from "react-i18next"; // استيراد الترجمة
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const { t, i18n } = useTranslation(); // تعريف دوال الترجمة
+
+  // دالة تبديل اللغة
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "ar" : "en";
+    i18n.changeLanguage(newLang);
+  };
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About Me", href: "#about" },
-    { name: "Services", href: "#Services" },
-    { name: "Projects", href: "#projects" },
-    { name: "Testimonial", href: "#Testimonial" },
-    { name: "Contact Us", href: "#Contact" },
+    { name: t("home"), href: "#" },
+    { name: t("about"), href: "#about" },
+    { name: t("services"), href: "#Services" },
+    { name: t("projects"), href: "#projects" },
+    { name: t("testimonial"), href: "#Testimonial" },
+    { name: t("contact"), href: "#Contact" },
   ];
 
   return (
@@ -27,12 +35,23 @@ export default function Navbar() {
             </h1>
           </div>
 
-          <div className="hidden lg:flex items-center gap-1 bg-gray-50/50 p-1 rounded-xl border border-gray-100">
-            {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="px-5 py-2 text-sm font-semibold text-gray-700 hover:text-[#669089] hover:bg-white rounded-lg transition-all duration-200">
-                {link.name}
-              </a>
-            ))}
+          <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-1 bg-gray-50/50 p-1 rounded-xl border border-gray-100">
+              {navLinks.map((link) => (
+                <a key={link.name} href={link.href} className="px-5 py-2 text-sm font-semibold text-gray-700 hover:text-[#669089] hover:bg-white rounded-lg transition-all duration-200">
+                  {link.name}
+                </a>
+              ))}
+            </div>
+
+            {/* زرار اللغة في الـ Desktop */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-[#669089] hover:text-[#669089] transition-all shadow-sm font-bold text-sm cursor-pointer"
+            >
+              <FiGlobe className="text-[#669089]" />
+              {i18n.language === "en" ? "العربية" : "English"}
+            </button>
           </div>
 
           <button onClick={() => setShowMenu(true)} className="lg:hidden p-2 text-[#669089]">
@@ -41,16 +60,16 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Overlay - خليته أغمق شوية عشان يبرز المنيو */}
+      {/* Overlay */}
       <div 
         className={`fixed inset-0 bg-black/20 backdrop-blur-[4px] lg:hidden transition-opacity duration-500 z-[60] ${showMenu ? "opacity-100" : "opacity-0 pointer-events-none"}`} 
         onClick={() => setShowMenu(false)} 
       />
       
-      {/* Side Menu - التصميم الجديد "Floating Card" */}
+      {/* Side Menu */}
       <div className={`fixed top-4 right-4 bottom-4 w-[260px] bg-white/90 backdrop-blur-2xl lg:hidden transform transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] z-[70] p-8 shadow-2xl rounded-3xl flex flex-col border border-white/20 ${showMenu ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}>
         
-        {/* زرار الإغلاق - خليته شيك في الزاوية */}
+        {/* زرار الإغلاق */}
         <div className="flex justify-end">
           <button 
             onClick={() => setShowMenu(false)}
@@ -60,7 +79,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Links - محاذاتها في النص وشكلها أهدى */}
+        {/* Links */}
         <nav className="flex flex-col gap-4 mt-12 items-center">
           {navLinks.map((link, i) => (
             <a
@@ -75,7 +94,21 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Footer التحتاني شيك وهادي */}
+        {/* زرار اللغة في الموبايل (جوة المنيو فقط) */}
+        <div className="mt-8">
+          <button
+            onClick={() => {
+              toggleLanguage();
+              setShowMenu(false);
+            }}
+            className="w-full flex justify-center items-center gap-2 py-4 bg-[#669089] text-white rounded-2xl font-bold shadow-lg cursor-pointer active:scale-95 transition-transform"
+          >
+            <FiGlobe size={20} />
+            {i18n.language === "en" ? "العربية" : "English"}
+          </button>
+        </div>
+
+        {/* Footer التحتاني */}
         <div className="mt-auto pt-6 text-center">
            <p className="text-[10px] font-black text-[#669089]/60 uppercase tracking-[0.2em]">
              © 2026 ROWIDA REDA

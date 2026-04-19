@@ -6,8 +6,11 @@ import img5 from "../assets/img5.jpg";
 import img6 from "../assets/img6.jpg";
 import img7 from "../assets/img7.jpg";
 import img8 from "../assets/img8.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
+  const { t } = useTranslation();
+
   return (
     <div
       id="projects"
@@ -20,7 +23,7 @@ export default function Projects() {
         data-aos-delay="300"
         className="text-4xl text-center font-bold text-gray-800 mb-6"
       >
-        Projects & Case Studies
+        {t("projects_main_title")}
       </h2>
 
       {/* الحاوية باستخدام grid */}
@@ -41,10 +44,10 @@ export default function Projects() {
             alt="project 1"
           />
           <h1 className="font-bold text-lg mb-2">
-            Early Intervention: Case <br /> of "Eyad"
+            {t("p1_title")}
           </h1>
           <p className="text-gray-700">
-            Eyad initially struggled with memory, focus, and attention, impacting his reading and writing.
+            {t("p1_desc")}
           </p>
         </div>
 
@@ -62,10 +65,10 @@ export default function Projects() {
             alt="project 2"
           />
           <h1 className="font-bold text-lg mb-2">
-            Speech Therapy: Progress <br /> of "Hams"
+            {t("p2_title")}
           </h1>
           <p className="text-gray-700">
-            Hams initially struggled with speech, a lisp on /s/, and stuttering, affecting her academics.
+            {t("p2_desc")}
           </p>
         </div>
 
@@ -83,10 +86,10 @@ export default function Projects() {
             alt="project 3"
           />
           <h1 className="font-bold text-lg mb-2">
-            Language Development: Case <br /> of "Dalida"
+            {t("p3_title")}
           </h1>
           <p className="text-gray-700">
-            Dalida struggled to produce clear sounds but has started saying her first words and is showing steady progress.
+            {t("p3_desc")}
           </p>
         </div>
 
@@ -104,10 +107,10 @@ export default function Projects() {
             alt="project 4"
           />
           <h1 className="font-bold text-lg mb-2">
-            Autism Therapy: Case <br /> of "Basant"
+            {t("p4_title")}
           </h1>
           <p className="text-gray-700">
-            Basant showed early signs of autism, but with therapy, these signs faded and she is making great progress.
+            {t("p4_desc")}
           </p>
         </div>
 
@@ -125,10 +128,10 @@ export default function Projects() {
             alt="project 5"
           />
           <h1 className="font-bold text-lg mb-2">
-            Cognitive Therapy: Case <br /> of "Abdel Rahman"
+            {t("p5_title")}
           </h1>
           <p className="text-gray-700">
-            Abdel Rahman struggled with cognition, attention, and memory, and could not hold a pencil. Therapy helped him improve these skills.
+            {t("p5_desc")}
           </p>
         </div>
 
@@ -146,10 +149,10 @@ export default function Projects() {
             alt="project 6"
           />
           <h1 className="font-bold text-lg mb-2">
-            Speech & Behavior: Case <br /> of "Ahmed"
+            {t("p6_title")}
           </h1>
           <p className="text-gray-700">
-            Ahmed struggled to pronounce the (R) sound and showed negative behaviors. Therapy helped correct his speech and improve behavior.
+            {t("p6_desc")}
           </p>
         </div>
 
@@ -167,10 +170,10 @@ export default function Projects() {
             alt="project 7"
           />
           <h1 className="font-bold text-lg mb-2">
-            Learning Support: Case <br /> of "Almi"
+            {t("p7_title")}
           </h1>
           <p className="text-gray-700">
-            Almi struggled with perception, attention, memory, and academics. Therapy helped her improve core skills and academic performance.
+            {t("p7_desc")}
           </p>
         </div>
 
@@ -188,10 +191,10 @@ export default function Projects() {
             alt="project 8"
           />
           <h1 className="font-bold text-lg mb-2">
-            Speech Therapy: Case <br /> of "Ahmed"
+            {t("p8_title")}
           </h1>
           <p className="text-gray-700">
-            Ahmed struggled to speak clearly and could say only one word. Therapy helped him form clear and understandable sentences.
+            {t("p8_desc")}
           </p>
         </div>
       </div>

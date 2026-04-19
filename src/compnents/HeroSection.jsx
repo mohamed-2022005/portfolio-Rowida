@@ -1,8 +1,11 @@
 import { FaInstagram, FaSquareFacebook, FaTiktok } from "react-icons/fa6";
 import bg from "../assets/background.png";
 import me from "../assets/rowida.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function HeroSection() {
+  const { t } = useTranslation();
+
     return (
         <div
             id="about"
@@ -61,12 +64,10 @@ export default function HeroSection() {
 
                     {/* texts */}
                     <div data-aos="fade-right" className="flex flex-col gap-3 max-w-md text-center md:text-left">
-                        <h1 className="text-4xl md:text-5xl font-bold">Hi, I'am Rowida</h1>
-                        <h4 className="text-2xl md:text-3xl text-[#6f34fe] font-bold">Social Worker</h4>
+                        <h1 className="text-4xl md:text-5xl font-bold">{t('hero_hi')}</h1>
+                        <h4 className="text-2xl md:text-3xl text-[#6f34fe] font-bold">{t('hero_job')}</h4>
                         <p className="text-[14px] md:text-[15px] ">
-                            High-level experience in social services and community support,
-                            <br />
-                            providing impactful and meaningful help to individuals and families.
+                            {t('hero_desc')}
                         </p>
 
                         <a
@@ -95,7 +96,7 @@ export default function HeroSection() {
                                 mx-auto md:mx-0
                               "
                         >
-                            Download Cv
+                            {t('download_cv')}
                             <span
                                 className="
                                     absolute
