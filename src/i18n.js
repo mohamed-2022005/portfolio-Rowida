@@ -75,7 +75,7 @@ i18n.use(initReactI18next).init({
 
                 hero_hi: "أهلاً، أنا رويدا",
                 hero_job: "أخصائية تخاطب ",
-                hero_desc: "خبرة واسعة في تأهيل ذوي الاحتياجات الخاصة والدعم المجتمعي، وتقديم مساعدة مؤثرة وذات مغزى للأفراد والأسر.",
+                hero_desc: "خبرة واسعة في تأهيل ذوي الاحتياجات الخاصة والدعم المجتمعي، وتقديم مساعدة مؤثرة وذات مغزى للأفراد والأسر",
                 download_cv: "تحميل السيرة الذاتية",
                 // Projects Section (تم تعديل الترتيب ليكون الاسم أولاً)
                 projects_main_title: "المشاريع ودراسات الحالة",
@@ -124,8 +124,8 @@ i18n.use(initReactI18next).init({
             },
         },
     },
-    lng: "en",
-    fallbackLng: "en",
+    lng: "ar",
+    fallbackLng: "ar",
     interpolation: { escapeValue: false },
 });
 

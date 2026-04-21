@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { FiMenu, FiX, FiGlobe } from "react-icons/fi";
-import { useTranslation } from "react-i18next"; // استيراد الترجمة
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
-  const { t, i18n } = useTranslation(); // تعريف دوال الترجمة
+  const { t, i18n } = useTranslation();
 
-  // دالة تبديل اللغة
   const toggleLanguage = () => {
     const newLang = i18n.language === "en" ? "ar" : "en";
     i18n.changeLanguage(newLang);
@@ -29,7 +28,14 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-[#669089] rounded-lg flex items-center justify-center text-white font-bold">R</div>
+            {/* في الموبايل المربع ده بيقلب لغة، في الديسكتوب بيفضل R عادي */}
+            <div 
+              onClick={() => { if(window.innerWidth < 1024) toggleLanguage() }}
+              className="w-8 h-8 bg-[#669089] rounded-lg flex items-center justify-center text-white font-bold text-[11px] lg:text-[14px] cursor-pointer lg:cursor-default"
+            >
+              <span className="lg:hidden">{i18n.language === "en" ? "AR" : "EN"}</span>
+              <span className="hidden lg:block">R</span>
+            </div>
             <h1 className="font-rowida font-bold text-xl text-gray-800 tracking-tight">
               Rowida<span className="text-[#669089]">Reda</span>
             </h1>
@@ -44,7 +50,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* زرار اللغة في الـ Desktop */}
+            {/* زرار اللغة في الـ Desktop زي ما هو */}
             <button
               onClick={toggleLanguage}
               className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-[#669089] hover:text-[#669089] transition-all shadow-sm font-bold text-sm cursor-pointer"
@@ -69,7 +75,6 @@ export default function Navbar() {
       {/* Side Menu */}
       <div className={`fixed top-4 right-4 bottom-4 w-[260px] bg-white/90 backdrop-blur-2xl lg:hidden transform transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] z-[70] p-8 shadow-2xl rounded-3xl flex flex-col border border-white/20 ${showMenu ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}>
         
-        {/* زرار الإغلاق */}
         <div className="flex justify-end">
           <button 
             onClick={() => setShowMenu(false)}
@@ -79,7 +84,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Links */}
         <nav className="flex flex-col gap-4 mt-12 items-center">
           {navLinks.map((link, i) => (
             <a
@@ -94,7 +98,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* زرار اللغة في الموبايل (جوة المنيو فقط) */}
+        {/* زرار اللغة الإضافي في الموبايل (احتياطي) */}
         <div className="mt-8">
           <button
             onClick={() => {
@@ -108,11 +112,10 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Footer التحتاني */}
         <div className="mt-auto pt-6 text-center">
-           <p className="text-[10px] font-black text-[#669089]/60 uppercase tracking-[0.2em]">
-             © 2026 ROWIDA REDA
-           </p>
+            <p className="text-[10px] font-black text-[#669089]/60 uppercase tracking-[0.2em]">
+              © 2026 ROWIDA REDA
+            </p>
         </div>
       </div>
     </header>
